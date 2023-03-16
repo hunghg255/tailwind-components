@@ -1,0 +1,41 @@
+{
+  "name": "tailwind-components",
+  "scripts": {
+    "test:r": "mocha -r ts-node/register --no-timeouts src/**/*.spec.ts",
+    "test:w": "mocha -r ts-node/register --no-timeouts --watch-files src/**/*.ts --watch src/**/*.spec.ts",
+    "test:d": "node --inspect -r ts-node/register node_modules/mocha/bin/mocha --no-timeouts --watch-files src/**/*.ts --watch src/**/*.spec.ts",
+    "test:brk": "node --inspect-brk -r ts-node/register node_modules/mocha/bin/mocha --no-timeouts src/**/*.spec.ts",
+    "tscheck": "echo tscheck... && tsc --noEmit",
+    "tscheck:w": "npm run tscheck -- --watch",
+    "remark": "sh Taskfile remark_run",
+    "remark:update": "sh Taskfile remark_run --output",
+    "program": "ts-node src/program.ts",
+    "program:x": "ts-node src/program.ts --only=xxx",
+    "generate": "npm run json && npm run readme",
+    "json": "npm run program -- --format=json",
+    "readme": "ts-node src/readme-components.ts && npm run remark:update"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.186",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.11.8",
+    "@types/pluralize": "^0.0.29",
+    "@types/puppeteer": "^5.4.7",
+    "@types/string-similarity": "^4.0.0",
+    "@types/yargs": "^17.0.13",
+    "expect": "^29.2.2",
+    "lodash": "^4.17.21",
+    "mocha": "^10.1.0",
+    "pluralize": "^8.0.0",
+    "prettier": "^2.7.1",
+    "puppeteer": "^19.2.0",
+    "remark": "^14.0.2",
+    "remark-cli": "^11.0.0",
+    "remark-toc": "^8.0.1",
+    "string-similarity": "^4.0.4",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4",
+    "yargs": "^17.6.0"
+  }
+}
